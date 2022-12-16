@@ -1,0 +1,13 @@
+.menu{
+    position: absolute;
+    width: 15%;
+    text-align: left;
+    padding: 50px 0 0 50px;
+    border-right: 3px solid black;
+    height: 100vh;
+}
+.menu > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

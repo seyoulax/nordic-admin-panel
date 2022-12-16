@@ -1,0 +1,7 @@
+.product-card > div > img{
+    max-width: 50%;
+}
+.product-card {
+    max-width: 30%;
+    margin-bottom: 30px;
+}

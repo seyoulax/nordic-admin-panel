@@ -1,13 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import router from './utils/router'
+import { RouterProvider } from 'react-router-dom';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-        <Nav />
-        <RouterProvider router={router} />
-    </div>
-  );
+class App extends React.Component{
+  constructor(){
+    super();
+  }
+  render(){
+    return (
+      <div className="App">
+          <RouterProvider router={router} />
+      </div>
+    );
+  }
 }
 
 export default App;
