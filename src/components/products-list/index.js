@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css'
 
+import {Loader} from '../loader'
+
 import productsJson from '../../stub/products.json'
 
 import ProductItem from '../product-item/index'
@@ -21,7 +23,6 @@ class ProductsList extends React.Component {
     findItem(event){
         event.preventDefault()
         let title = event.target[0].value
-        console.log("🚀 ~ file: index.js:22 ~ Products ~ findItem ~ title", title)
         let data = this.state.alwaysData
         let t_f = false
         let array = []
@@ -67,7 +68,6 @@ class ProductsList extends React.Component {
         setTimeout(() => {
             this.setState({
                 alwaysData: productsJson,
-                data: productsJson,
                 isLoading: false 
             })
         }, 1000);
@@ -85,7 +85,7 @@ class ProductsList extends React.Component {
         } else {
             if(this.isLoading){
                return (
-                <h1>isLoading</h1>
+                    <Loader />
                )
             }
             return (
