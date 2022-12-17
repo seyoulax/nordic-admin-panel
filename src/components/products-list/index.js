@@ -13,7 +13,8 @@ class ProductsList extends React.Component {
         this.state = {
             alwaysData: [],
             data: null,
-            showNothingFoundErr: false
+            showNothingFoundErr: false,
+            isLoading: true
         }
         this.findItem = this.findItem.bind(this)
     }
@@ -63,11 +64,14 @@ class ProductsList extends React.Component {
         // }
     // *
     componentDidMount(){
-        this.setState({
-            alwaysData: productsJson,
-            data: productsJson 
-
-        })
+        setTimeout(() => {
+            this.setState({
+                alwaysData: productsJson,
+                data: productsJson,
+                isLoading: false 
+            })
+        }, 1000);
+        
     }
     // componentDidUpdate(){
         
@@ -79,7 +83,11 @@ class ProductsList extends React.Component {
         if(!this.state.data && !this.state.alwaysData){
             throw new Error('gg')
         } else {
-            
+            if(this.isLoading){
+               return (
+                <h1>isLoading</h1>
+               )
+            }
             return (
                 <React.Fragment>
                     <div>
