@@ -4,8 +4,9 @@ import { createBrowserRouter } from 'react-router-dom'
 import Products from '../../pages/products'
 import Main from '../../pages/main'
 import MainLayout from '../../components/main-layout'
-import ProductsList from '../../components/products-list'
-import ProductDetail from '../../components/product-detail'
+import {ProductsList} from '../../components/products-list'
+import {ProductDetail} from '../../components/product-detail'
+import {AddProduct} from '../../pages/products/add'
 
 //describing routing
 /** 
@@ -34,6 +35,10 @@ const router = createBrowserRouter( [
                     { 
                         path: '/products/:id', 
                         element: <ProductDetail />
+                    },
+                    {
+                        path: '/products/add',
+                        element: <AddProduct />
                     }
                 ]
             }
